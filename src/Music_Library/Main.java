@@ -2,7 +2,7 @@ package Music_Library;
 
 public class Main{
     public static void main(String[] args) {
-        Artist MaxKorzh=new Artist("Макс Корж","Хипхоп");
+        Artist MaxKorzh=new Artist("Макс Корж","Хип-хоп");
         Artist Eminem=new Artist("Eminem","Rap");
 
         Song s1=new Song("2 типа людей", MaxKorzh);
