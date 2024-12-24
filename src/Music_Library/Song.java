@@ -1,8 +1,14 @@
 package Music_Library;
 public class Song{
+    private int id;
+    private static int id_gen=1;
     private String title;
     private Artist artist;
+    public Song() {
+        id = id_gen++;
+    }
     public Song(String title, Artist artist){
+        this();
         this.title=title;
         this.artist=artist;
     }
@@ -25,6 +31,6 @@ public class Song{
         return this.artist.getName().equals(other.artist.getName());
     }
     public void printSongInfo(){
-        System.out.println("Песня: " + title + ", Исполнитель: " + artist.getName());
+        System.out.println("Песня " + id + ": " + title + ", Исполнитель: " + artist.getName());
     }
 }
