@@ -30,7 +30,21 @@ public class Song{
     public boolean isSameArtist(Song other){
         return this.artist.getName().equals(other.artist.getName());
     }
-    public void printSongInfo(){
-        System.out.println("Песня " + id + ": " + title + ", Исполнитель: " + artist.getName());
+    @Override
+    public String toString() {
+        return "Песня " + id + ": " + title + ", " + artist;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Song song = (Song) obj;
+        return title.equals(song.title) && artist.equals(song.artist);
+    }
+
+    @Override
+    public int hashCode() {
+        return title.hashCode() + artist.hashCode();
     }
 }

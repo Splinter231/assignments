@@ -20,4 +20,21 @@ public class Artist{
     public void setGenre(String genre){
         this.genre=genre;
     }
+    @Override
+    public String toString() {
+        return "Исполнитель: " + name + ", Жанр: " + genre;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Artist artist = (Artist) obj;
+        return name.equals(artist.name) && genre.equals(artist.genre);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode() + genre.hashCode();
+    }
 }
