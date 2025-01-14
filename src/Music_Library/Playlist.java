@@ -47,11 +47,6 @@ public class Playlist{
     }
 
     @Override
-    public int hashCode() {
-        return name.hashCode() + songs.hashCode();
-    }
-
-    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
