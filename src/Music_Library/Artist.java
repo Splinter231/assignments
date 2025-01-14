@@ -26,6 +26,11 @@ public class Artist{
     }
 
     @Override
+    public int hashCode() {
+        return name.hashCode() + genre.hashCode();
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
@@ -33,8 +38,4 @@ public class Artist{
         return name.equals(artist.name) && genre.equals(artist.genre);
     }
 
-    @Override
-    public int hashCode() {
-        return name.hashCode() + genre.hashCode();
-    }
 }
