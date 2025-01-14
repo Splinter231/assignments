@@ -33,7 +33,7 @@ public class Playlist{
 
     public List<Song> searchByTitle(String title) {
         return songs.stream()
-                .filter(song -> song.getTitle().equalsIgnoreCase(title))
+                .filter(song -> song.getTitle().contains(title))
                 .collect(Collectors.toList());
     }
 
@@ -47,6 +47,11 @@ public class Playlist{
     }
 
     @Override
+    public int hashCode() {
+        return name.hashCode() + songs.hashCode();
+    }
+
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
@@ -54,8 +59,4 @@ public class Playlist{
         return name.equals(playlist.name) && songs.equals(playlist.songs);
     }
 
-    @Override
-    public int hashCode() {
-        return name.hashCode() + songs.hashCode();
-    }
 }
