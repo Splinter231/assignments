@@ -2,11 +2,14 @@ package Music_Library;
 import java.util.Objects;
 
 public abstract class BaseEntity {
-    private static int idGenerator = 1;
     private final int id;
 
-    public BaseEntity() {
-        this.id = idGenerator++;
+    public BaseEntity(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

@@ -5,7 +5,7 @@ public class Artist extends BaseEntity {
     private String genre;
 
     public Artist(String name, String genre) {
-        super();
+        super(GeneratorId.generateArtistId());
         this.name = name;
         this.genre = genre;
     }

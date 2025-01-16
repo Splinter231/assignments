@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Playlist{
+public class Playlist implements Playable {
     private String name;
     private ArrayList<Song> songs=new ArrayList<>();
 
@@ -23,6 +23,14 @@ public class Playlist{
     public void showPlaylist() {
         System.out.println("Плейлист: " + name);
         songs.forEach(System.out::println);
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Проигрывающийся плейлист: " + name);
+        for (Song song : songs) {
+            song.play();
+        }
     }
 
     public List<Song> filterByArtist(Artist artist) {

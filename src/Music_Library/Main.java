@@ -16,6 +16,15 @@ public class Main {
 
         playlist.showPlaylist();
 
+        Playable p1 = song1;
+        Playable p2 = playlist;
+
+        System.out.println("\nПроигрывание песни");
+        p1.play();
+
+        System.out.println("\nПроигрывание плейлиста");
+        p2.play();
+
         System.out.println("\nСравнение песен:");
         System.out.println(song1.equals(song3) ? "Одинаковые песни" : "Разные песни");
 

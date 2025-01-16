@@ -1,13 +1,18 @@
 package Music_Library;
 
-public class Song extends BaseEntity {
+public class Song extends BaseEntity implements Playable{
     private String title;
     private Artist artist;
 
     public Song(String title, Artist artist) {
-        super();
+        super(GeneratorId.generateSongId());
         this.title = title;
         this.artist = artist;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Играющая песня: " + title + " от " + artist.getName());
     }
 
     public String getTitle() {
